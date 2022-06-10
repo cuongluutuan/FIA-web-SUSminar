@@ -34,7 +34,8 @@ app.post("/locker", (req, res)=>{
 		res.render("method", {
 			flag: e.f2,
 			meme: "/meme1.jpeg", 
-			message: "CONGRATS!! YOU ARE NOW A HACKER!"
+			message: "CONGRATS!! YOU ARE NOW A HACKER! BUT......",
+			extra: 'Source code: https://github.com/cuongluutuan/FIA-web-SUSminar',
 		});
 	}else{
 		res.render("bad", {
@@ -48,6 +49,7 @@ app.get("/k3y", (req, res)=>{
 		flag: e.f1,
 		meme: "/meme2.png",
 		message: `Here's the Key: ${e.k}`,
+		extra: '',
 	});
 });
 
@@ -56,38 +58,39 @@ app.get("/k3y", (req, res)=>{
 
 app.get("/method", (req, res)=>{
 	res.send("This is GET");
-})
+});
 
 app.post("/method", (req, res)=>{
 	res.send("This is POST");
-})
+});
 
 app.put("/method", (req, res)=>{
 	res.send("This is PUT");
-})
+});
 
 app.delete("/method", (req, res)=>{
 	res.send("This is DELETE");
-})
+});
 
 // =======================================================
 
-app.get("/q",(req, res)=>{
-	const t = req.query.title;
-	res.send(`Title: ${t}`);
-})
+// This is not Sussy.....isn't it..?
+app.get("/javascript",(req, res)=>{
+	const codes = req.query.js;
+	res.send(`Result: ${eval(codes)}`);
+});
 
 // =======================================================
 
 // test status code 302
 app.get("/next", (req, res)=>{
 	res.redirect("/");
-})
+});
 
 // test status code 404
 app.get("*", (req, res)=>{
 	res.status(404).send("404 Not found!!!");
-})
+});
 
 
 app.listen(8080, ()=>console.log("running"));
