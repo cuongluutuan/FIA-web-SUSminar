@@ -1,0 +1,17 @@
+<%- include('partials/head'); -%>
+	<!-- <%= hint %>  -->
+	<h1><%= m %></h1>
+	<form method="get" action="/locker">
+		<input type="text" name="sussyFlag" id="flagInput" placeholder="Insert the Key here to Unlock!">
+		<button id="submitButton" value="Submit">SUBMIT</i></button> 
+	</form>
+	<%- include('partials/memes'); -%>
+	<script>
+		document.getElementById("flagInput").addEventListener("keypress", (event)=>{
+			if(event.key==13){
+				event.preventDefault();
+				document.getElementById("submitButton").click();
+			}
+		});
+	</script>
+<%- include('partials/footer'); -%>
