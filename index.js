@@ -17,7 +17,7 @@ const e = {
 app.get("/", (req,res)=>{
 	res.render('index', {
 		m: "There must be something on this page...",
-		hint: "Looking for the K3Y huh? Try GET it from me!! =)))",
+		hint: "Looking for the /K3Y huh? Try GET it from me!! =)))",
 		meme: "/wheres-the-key.jpg",
 	});
 });
